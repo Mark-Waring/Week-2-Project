@@ -12,7 +12,7 @@
     display: flex;
     flex-flow: row wrap;
     align-items: center;
-    height: 85vh;
+    height: 80vh;
   }
   .mole {
     display: flex;
