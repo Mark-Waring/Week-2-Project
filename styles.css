@@ -1,33 +1,52 @@
-.mole-container {
-    display: flex;
-    flex-flow: row wrap;
-  }
-  .mole {
-    height: 100px;
-    width: 100px;
-    flex-basis: calc(20% - 10px);
-    flex-grow: 1;
-    border: 1px solid black;
-  }
+
+
+  
 
   header {
     display: flex;
-    flex-flow: row nowrap;
+    flex-direction: row;
+    padding-bottom: 5px;
+    align-content: center;
   }
-  .counter-text-container {
+  .mole-container {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    height: 85vh;
+  }
+  .mole {
+    display: flex;
+    height: 18%;
+    flex-basis: calc(20% - 20px);
+    flex-grow: 1;
+    border: 1px solid black;
+    border-radius: 50%;
+    margin: 5px;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    font-size:large;
+  }
+  .scoreboard-container {
+    display: flex;
     flex-basis: 33%;
     flex-grow: 1;
+    justify-content: center;
+    align-items: center;
   }
   .start-container {
     flex-basis: 33%;
     flex-grow: 1;
     text-align: center;
+    align-self: center;
   }
   .radio-container {
     display: flex;
     flex-basis: 33%;
     flex-grow: 1;
     justify-content: center;
+    align-items: center;
   }
   button {
     width: 50%;
