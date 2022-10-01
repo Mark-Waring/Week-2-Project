@@ -58,10 +58,9 @@
     width: 50%;
     height: 90%;
   }
-
   @media screen and (max-width: 415px){
     .button{
         height: 20px;
     }
-
+  }
  
