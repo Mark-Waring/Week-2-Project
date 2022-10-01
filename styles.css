@@ -46,6 +46,7 @@
     text-align: center;
     align-self: center;
   }
+  
   .radio-container {
     display: flex;
     flex-basis: 33%;
@@ -57,5 +58,10 @@
     width: 50%;
     height: 90%;
   }
+
+  @media screen and (max-width: 415px){
+    .button{
+        height: 20px;
+    }
 
  
