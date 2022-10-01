@@ -28,6 +28,11 @@
     color: white;
     font-size:large;
   }
+  @media screen and (max-width: 285px){
+    .mole{
+        font-size: 10px;
+    }
+  }
   .scoreboard-container {
     display: flex;
     flex-basis: 33%;
@@ -52,3 +57,5 @@
     width: 50%;
     height: 90%;
   }
+
+ 
