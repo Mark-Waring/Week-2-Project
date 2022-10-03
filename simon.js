@@ -6,14 +6,15 @@
 let startButton = document.getElementById("start");
 let scoreDisplay = document.getElementById("score-text");
 const simonButtons = document.getElementsByClassName("simonButton");
-for (let i = 0; i < simonButtons.length; i++) {
-  simonButtons[i].addEventListener("mousedown", function () {
-  this.setAttribute("style", "opacity: .2");
-  setTimeout(() => {
-    this.setAttribute("style", "opacity: null");
-  }, 80);
-  });
-};
+// for (let i = 0; i < simonButtons.length; i++) {
+//   simonButtons[i].addEventListener("mousedown", function () {
+//   this.setAttribute("style", "opacity: .2");
+//   console.log(this.id  + " button clicked.")
+//   setTimeout(() => {
+//     this.setAttribute("style", "opacity: null");
+//   }, 80);
+//   });
+// };
 
 // const selectedLight = function {[Math.floor(Math.random() * simonButtons.length)]};
 // console.log(selectedLight);
@@ -28,13 +29,27 @@ const redButton = document.getElementById("red")
 const blueButton = document.getElementById("blue")
 const yellowButton = document.getElementById("yellow")
 
+function startGame(){
+  startButton.disabled = true;
+  score = 0;
+  scoreDisplay.innerText = `Your score: ${score}`;
+  
+ computerLights ();
+  
+}
 
+function endGame(){
+  startButton.disabled = false;
+  startButton.innerText = "Play Again";
+  scoreDisplay.innerText = `Final Score: ${score}`;
+}
  
 
-function computerLights (){
+
 const buttonsArray = ["green", "red", "blue", "yellow"];
-let rand  = buttonsArray[Math.floor(Math.random() * 4)];
-console.log(rand);
+let rand = buttonsArray[Math.floor(Math.random() * 4)];
+
+function computerLights (){
 if (rand === "green") {
   greenButton.style.opacity = ".2";
 } else if (rand === "red"){
@@ -51,6 +66,28 @@ if (rand === "green") {
     yellowButton.style.opacity = "100%";
   }, 1000);
 }
+matchingEvent();
+
+function matchingEvent (){
+  for (let i = 0; i < simonButtons.length; i++) {
+    simonButtons[i].addEventListener("mousedown", function () {
+    this.setAttribute("style", "opacity: .2");
+    setTimeout(() => {
+      this.setAttribute("style", "opacity: null");
+    }, 80);
+    let buttonClickedId = (this.id);
+    if (buttonClickedId === rand) {
+      score++;
+      scoreDisplay.innerText = `Your Score: ${score}`;
+      computerLights ();
+    } else {
+      endGame();
+    }
+    });
+    
+  };
+}
+
 
 function startGame(){
   startButton.disabled = true;
@@ -63,6 +100,11 @@ function startGame(){
 
 document.getElementById("start").addEventListener("click", startGame);
 
+function endGame(){
+  startButton.disabled = false;
+  startButton.innerText = "Play Again";
+  scoreDisplay.innerText = `Final Score: ${score}`;
+}
 
 // const greenButton = document.getElementById("green")
 // computerSelection ();
