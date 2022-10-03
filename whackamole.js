@@ -77,13 +77,3 @@ function endGame(){
 
 
 }
-
-
-
-
-
-
-
-
-
-
