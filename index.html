@@ -5,65 +5,121 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="./styles.css" />
+    <style>
+      header {
+        display: flex;
+        flex-direction: row;
+        padding-bottom: 20px;
+        align-content: center;
+      }
+      .start-container {
+        flex-basis: 50%;
+        flex-grow: 1;
+        text-align: center;
+        align-self: center;
+      }
+
+      .scoreboard {
+        flex-basis: 50%;
+        flex-grow: 1;
+        text-align: center;
+        align-self: center;
+      }
+      
+  
+      button {
+        width: 50%;
+        height: 90%;
+      }
+
+      .simon-container {
+            display: flex;
+            justify-content: center;
+      }
+
+      .simon-game {
+        display: flex;
+        flex-wrap: wrap;
+        width: calc(100vh - 8px);
+        justify-content: center;
+      }
+
+      .simonButton{
+        opacity: 100%;
+      }
+
+      
+      #green {
+        background-color: green;
+        flex-basis: 50%;
+        height: calc(50vw - 8px);
+        border-top-left-radius: 100%;
+        flex-grow: 1;
+      }
+      #red {
+        background-color: red;
+        flex-basis: 50%;
+        height: calc(50vw - 8px);
+        border-top-right-radius: 100%;        
+        flex-grow: 1;
+        
+      }
+      #blue {
+        background-color: blue;
+        flex-basis: 50%;
+        height: calc(50vw - 8px);
+        border-bottom-left-radius: 100%;
+        flex-grow: 1;
+      }
+      #yellow {
+        background-color: goldenrod;
+        flex-basis: 50%;
+        height: calc(50vw - 8px);
+        border-bottom-right-radius: 100%;
+        flex-grow: 1;
+      }
+      @media screen and (min-width: 667px){
+        #green{
+            flex-basis: calc(40vh - 8px);
+            height: calc(40vh - 8px);
+            flex-grow: 0;
+        }
+        #red{
+            flex-basis: calc(40vh - 8px);
+            height: calc(40vh - 8px);
+            flex-grow: 0;
+        }
+        #blue{
+            flex-basis: calc(40vh - 8px);
+            height: calc(40vh - 8px);
+            flex-grow: 0;
+        }
+        #yellow{
+            flex-basis: calc(40vh - 8px);
+            height: calc(40vh - 8px);
+            flex-grow: 0;
+        }
+      }
+    </style>
+      
+    </style>
   </head>
   <body>
     <header>
-      <div class="scoreboard-container">
-        <div>
-          <div id="timer">Time left: 30</div>
-          <div id="score">Your score: 0</div>
-        </div>
-      </div>
+      <div class="scoreboard" id = "score-text">Your Score: 0</div>
       <div class="start-container">
         <button id="start">Start</button>
       </div>
-      <div class="radio-container">
-        <div>
-          <div>Choose level</div>
-          <div>
-            <input type="radio" name="difficulty" id="easy" checked="checked" />
-            <label for="easy">Easy</label>
-          </div>
-          <div>
-            <input type="radio" name="difficulty" id="medium" />
-            <label for="medium">Medium</label>
-          </div>
-          <div>
-            <input type="radio" name="difficulty" id="hard" />
-            <label for="hard">Hard</label>
-          </div>
+    </header>
+    <div class="simon-container">
+        <div class="simon-game">
+          <div class= "simonButton" id="green"></div>
+          <div class= "simonButton" id="red"></div>
+          <div class= "simonButton" id="blue"></div>
+          <div class= "simonButton" id="yellow"></div>
         </div>
       </div>
-    </header>
-
-    <div class="mole-container">
-      <div class="mole"></div>
-      <div class="mole"></div>
-      <div class="mole"></div>
-      <div class="mole"></div>
-      <div class="mole"></div>
-      <div class="mole"></div>
-      <div class="mole"></div>
-      <div class="mole"></div>
-      <div class="mole"></div>
-      <div class="mole"></div>
-      <div class="mole"></div>
-      <div class="mole"></div>
-      <div class="mole"></div>
-      <div class="mole"></div>
-      <div class="mole"></div>
-      <div class="mole"></div>
-      <div class="mole"></div>
-      <div class="mole"></div>
-      <div class="mole"></div>
-      <div class="mole"></div>
-      <div class="mole"></div>
-      <div class="mole"></div>
-      <div class="mole"></div>
-      <div class="mole"></div>
-      <div class="mole"></div>
     </div>
-    <script src="./whackamole.js"></script>
+    <script src="./simon.js"></script>
   </body>
 </html>
